@@ -1,111 +1,11 @@
-@media (max-width: 290px) {
-    h4.menu::before {
-        content: 'G. Mora' !important;
-    }
-}
-
-@media (min-width: 356px) {
+@media (max-width: 480px) {
 
 }
 
-@media (max-width: 480px) {}
+@media (max-width: 768px) {
 
-@media (max-width: 768px) {}
+}
 
 @media (max-width: 1024px) {
-    main {
-        max-width: 44rem;
-        padding: 100px 16px;
-    }
-}
-
-@media (max-width: 1111px) {
-    header div div.menu:nth-child(2) {
-        cursor: pointer !important;
-        margin: 0 20px !important;
-        display: flex !important;
-    }
-}
-
-@media (max-width: 1111px) {
-    h4.menu::before {
-        content: 'Guillermo Mora';
-    }
     
-    header.menu {
-        padding: 0px;
-        padding-top: 20px;
-        margin: 10px 10px;
-    }
-
-    header.menu svg.header-logo {
-        top: 0px;
-    }
-
-    ul.menu li {
-        padding: 10px 0;
-        opacity: 0;
-        transition: opacity 0.2s ease-in-out 0.2s;
-    }
-
-    ul.menu li:last-child {
-        margin-bottom: 25px;
-    }
-
-    
-
-    img.menu-desplegable {
-        user-select: none;
-    }
-
-
-    ul.menu-js {
-        overflow: hidden;
-        display: block;
-        justify-content: center;
-        margin-top: 20px;
-        text-align: center;
-        max-height: 0;
-        transition: max-height 0.2s ease-in-out;
-    }
-
-    /*Al hacer clic en el botón del menú*/
-
-    ul.menu-js.activado {
-        max-height: 500px;
-        overflow: visible;
-    }
-
-    ul.menu-js.activado li {
-        opacity: 1;
-    }
-
-    /*---*/
-
-    nav div > a > div.menu:first-child {
-        position: relative;
-        padding-left: 20px;
-    }
-
-    header nav>div>a {
-        display: block;
-        width: fit-content;
-    }
-
-    header.menu nav>a {
-        width: fit-content;
-        display: block;
-    }
-
-    header>nav>div:first-child {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-}
-
-@media (min-width: 1110px) {
-    nav div>div.menu:nth-last-child(1) {
-        display: none;
-    }
 }
