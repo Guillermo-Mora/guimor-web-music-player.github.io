@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es" id="inicio">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guillermo Mora</title>
+  <link rel="icon" type="image/svg+xml" href="img/global/favicon.svg">
+  <link rel="stylesheet" type="text/css" href="css/global/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/global/fonts.css">
+  <link rel="stylesheet" type="text/css" href="css/global/style.css">
+  <link rel="stylesheet" type="text/css" href="css/global/responsive.css">
+  <link rel="stylesheet" type="text/css" href="css/pages/home.css">
+  <link rel="stylesheet" type="text/css" href="css/responsive/home-res.css">
+</head>
+
+<body class="scroll-activo">
+  <div style="height: 0px; position: sticky; top: 10px; z-index: 1;">
+    <header class="menu header-js">
+      <nav>
+        <div>
+          <a href="#inicio" class="enlace-inicio">
+            <div class="menu">
+              <svg  xmlns="http://www.w3.org/2000/svg" class="header-logo"  width="34"  height="34"  viewBox="0 0 24 24"  fill="currentColor"  class="icon icon-tabler icons-tabler-filled icon-tabler-circle-letter-g"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10 -10 10s-10 -4.477 -10 -10s4.477 -10 10 -10m2 5h-2a3 3 0 0 0 -3 3v4a3 3 0 0 0 3 3h2a1 1 0 0 0 1 -1v-4a1 1 0 0 0 -1 -1h-1a1 1 0 0 0 -1 1l.007 .117a1 1 0 0 0 .993 .883v2h-1a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2a1 1 0 0 0 0 -2" /></svg>
+              <h4 class="menu"></h4>
+            </div>
+          </a>
+          <div class="menu">
+            <img src="img/global/menuDesplegable.svg" class="menu-desplegable" alt="menu" id="menuButton">
+          </div>
+        </div>
+        <ul class="menu menu-js">
+          <li><a href="#experiencia">Experiencia</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li>
+            <a href="#proyectos" title="Proyectos">
+              <svg xmlns="http://www.w3.org/2000/svg" class="nav-option" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-folder-open">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M5 19l2.757 -7.351a1 1 0 0 1 .936 -.649h12.307a1 1 0 0 1 .986 1.164l-.996 5.211a2 2 0 0 1 -1.964 1.625h-14.026a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2h4l3 3h7a2 2 0 0 1 2 2v2" />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </div>
+  <main>
+    <section class="intro">
+      <div class="div-izquierda">
+        <h1 class="intro titulo">¡Hola! Soy <span class="color-resalte">Guille</span>
+        </h1>
+        <img src="img/pages/home/Guillermo_Mora.webp" alt="Foto de Guillermo Mora" class="foto-personal-2">
+        <p class="parrafo-intro">Estoy aprendiendo a programar y a trabajar con tecnologías como Java, SQL, HTML, CSS y
+          JS. Me apasiona resolver problemas y estoy motivado por aprender cada día más.</p>
+        <div class="enlaces">
+          <button title="CV"><a id="abrirCV">
+              <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-file-cv">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+                <path d="M11 12.5a1.5 1.5 0 0 0 -3 0v3a1.5 1.5 0 0 0 3 0" />
+                <path d="M13 11l1.5 6l1.5 -6" />
+              </svg>
+            </a>
+          </button>
+          <button title="GitHub"><a href="https://github.com/Guillermo-Mora" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+              </svg>
+            </a>
+          </button>
+          <button title="Linkedin">
+            <a href="https://www.linkedin.com/in/guillermo-mora-mortes-b071a034a/" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-brand-linkedin">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M8 11v5" />
+                <path d="M8 8v.01" />
+                <path d="M12 16v-5" />
+                <path d="M16 16v-3a2 2 0 1 0 -4 0" />
+                <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4z" />
+              </svg>
+            </a>
+          </button>
+        </div>
+      </div>
+      <img src="img/pages/home/Guillermo_Mora.webp" alt="Foto de Guillermo Mora" class="foto-personal-1">
+    </section>
+    <section>
+      <h1 class="titulo" id="experiencia">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+          class="icon icon-tabler icons-tabler-filled icon-tabler-briefcase">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path
+            d="M22 13.478v4.522a3 3 0 0 1 -3 3h-14a3 3 0 0 1 -3 -3v-4.522l.553 .277a20.999 20.999 0 0 0 18.897 -.002l.55 -.275zm-8 -11.478a3 3 0 0 1 3 3v1h2a3 3 0 0 1 3 3v2.242l-1.447 .724a19.002 19.002 0 0 1 -16.726 .186l-.647 -.32l-1.18 -.59v-2.242a3 3 0 0 1 3 -3h2v-1a3 3 0 0 1 3 -3h4zm-2 8a1 1 0 0 0 -1 1a1 1 0 1 0 2 .01c0 -.562 -.448 -1.01 -1 -1.01zm2 -6h-4a1 1 0 0 0 -1 1v1h6v-1a1 1 0 0 0 -1 -1z" />
+        </svg>
+        Experiencia laboral
+      </h1>
+      <ul class="ul-exp-laboral">
+        <li class="li-estilo-exp">
+          <div class="exp-laboral">
+            <div class="titulo-exp">
+              <h3>Desarrollo web y soporte técnico</h3>
+              <h3>Doctor Phone</h3>
+              <small>Abril - Junio 2024</small>
+            </div>
+            <div class="desc-exp">
+              <p>Desarrollo de la web para el local, principalmente en HTML y CSS.
+              </p>
+              <p>Atención al cliente, reparación de teléfonos móviles y portátiles, así como mantenimiento de equipos
+                informáticos.</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h1 class="titulo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+          class="icon icon-tabler icons-tabler-filled icon-tabler-settings">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path
+            d="M14.647 4.081a.724 .724 0 0 0 1.08 .448c2.439 -1.485 5.23 1.305 3.745 3.744a.724 .724 0 0 0 .447 1.08c2.775 .673 2.775 4.62 0 5.294a.724 .724 0 0 0 -.448 1.08c1.485 2.439 -1.305 5.23 -3.744 3.745a.724 .724 0 0 0 -1.08 .447c-.673 2.775 -4.62 2.775 -5.294 0a.724 .724 0 0 0 -1.08 -.448c-2.439 1.485 -5.23 -1.305 -3.745 -3.744a.724 .724 0 0 0 -.447 -1.08c-2.775 -.673 -2.775 -4.62 0 -5.294a.724 .724 0 0 0 .448 -1.08c-1.485 -2.439 1.305 -5.23 3.744 -3.745a.722 .722 0 0 0 1.08 -.447c.673 -2.775 4.62 -2.775 5.294 0zm-2.647 4.919a3 3 0 1 0 0 6a3 3 0 0 0 0 -6z" />
+        </svg>
+        Tecnologías
+      </h1>
+      <div class="caja-tecnologias">
+        <div><img src="img/pages/home/HTML.webp" alt=""></div>
+        <div><img src="img/pages/home/CSS.webp" alt=""></div>
+        <div><img src="img/pages/home/Javascript.webp" alt=""></div>
+        <div><img src="img/pages/home/WordPress.webp" alt=""></div>
+        <div><img src="img/pages/home/Java.webp" alt=""></div>
+        <div><img src="img/pages/home/MySQL.webp" alt=""></div>
+      </div>
+    </section>
+    <section>
+      <h1 class="titulo" id="proyectos">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-code">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M7 8l-4 4l4 4" />
+          <path d="M17 8l4 4l-4 4" />
+          <path d="M14 4l-4 16" />
+        </svg>
+        Proyectos
+      </h1>
+      <div class="proy-divs">
+        <img src="img/pages/home/DCPhone_Project.webp" alt="Doctor Phone Web" class="img-proy-izq">
+        <div class="contenido-texto">
+          <h3 class="titulo-proy">Doctor Phone - Página web para un local de reparación de dispositivos móviles</h3>
+          <div class="tec-usadas">
+            <img src="img/pages/home/HTML.webp">
+            <img src="img/pages/home/CSS.webp">
+            <img src="img/pages/home/Javascript.webp">
+          </div>
+          <p class="texto-proy">
+            Página web simple y minimalista. Creada desde cero con HTML, CSS y JS.
+          </p>
+          <div class="proy-botones">
+            <button>
+              <a href="https://doctorphonevlc.es/" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-link">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M9 15l6 -6" />
+                  <path d="M11 6l.463 -.536a5 5 0 0 1 7.071 7.072l-.534 .464" />
+                  <path d="M13 18l-.397 .534a5.068 5.068 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463" />
+                </svg>
+                Preview
+              </a>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="proy-divs">
+        <img src="img/pages/home/GSMSmart_Project.webp" alt="Doctor Phone Web" class="img-proy-izq">
+        <div class="contenido-texto">
+          <h3 class="titulo-proy">GSM Smart - Página web para un local de reparación y venta de dispositivos móviles
+          </h3>
+          <div class="tec-usadas">
+            <img src="img/pages/home/WordPress.webp">
+          </div>
+          <p class="texto-proy">
+            Página web con eCommerce integrado. Creada en WordPress utilizando el tema Blocksy y el editor Gutenberg.
+          </p>
+          <p class="en-desarrollo"><small>En desarrollo</small></p>
+          <div class="proy-botones">
+            <button>
+              <a id="abrirVideo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-player-play">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M7 4v16l13 -8z" />
+                </svg>
+                Preview
+              </a>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="proy-divs">
+        <img src="img/pages/home/Calculadora_Project.webp" alt="Doctor Phone Web" class="img-proy-izq">
+        <div class="contenido-texto">
+          <h3 class="titulo-proy">Calculadora - Aplicación de cálculo básico en terminal</h3>
+          <div class="tec-usadas">
+            <img src="img/pages/home/Java.webp">
+          </div>
+          <p class="texto-proy">
+            Calculadora en Java con soporte para suma, resta, multiplicación, división y números decimales.
+          </p>
+          <div class="proy-botones">
+            <button>
+              <a href="https://github.com/Guillermo-Mora/Calculadora-basica-Java" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+                </svg>
+                Código
+              </a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="sec-sobre-mi">
+      <h1 class="titulo" id="sobre-mi">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+          class="icon icon-tabler icons-tabler-filled icon-tabler-user">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M12 2a5 5 0 1 1 -5 5l.005 -.217a5 5 0 0 1 4.995 -4.783z" />
+          <path d="M14 14a5 5 0 0 1 5 5v1a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-1a5 5 0 0 1 5 -5h4z" />
+        </svg>
+        Sobre mí
+      </h1>
+      <div class="div-sobre-mi">
+        <div class="div-izq-sobre-mi">
+          <img src="img/pages/home/Guillermo_Mora.webp" alt="Guillermo Mora" class="img-sobre-mi-2">
+          <p>
+            Me llamo <span class="res-sobre-mi">Guillermo</span> y me apasiona el <span class="res-sobre-mi">desarrollo
+              web</span> y la <span class="res-sobre-mi">programación</span>. Siempre me ha interesado la <span
+              class="res-sobre-mi">informática</span> y he disfrutado aprendiendo y curioseando por mi cuenta.
+            Actualmente me encuentro cursando <span class="res-sobre-mi">1º de DAM</span>.
+          </p>
+          <p>
+            He desarrollado una <span class="res-sobre-mi">página web</span> para un local de reparación de dispositivos
+            móviles y actualmente estoy
+            <span class="res-sobre-mi">aprendiendo Java</span>, dando mis primeros pasos en la <span
+              class="res-sobre-mi">programación</span>. Me interesa
+            seguir explorando distintas áreas
+            del desarrollo y mejorando en lo que me gusta.
+          </p>
+          <p>
+            En el futuro, me gustaría trabajar en <span class="res-sobre-mi">startups</span> y formar parte de
+            <span class="res-sobre-mi">proyectos innovadores</span> que me desafíen a
+            seguir creciendo y aprendiendo como desarrollador.
+          </p>
+        </div>
+        <img src="img/pages/home/Guillermo_Mora.webp" alt="Guillermo Mora" class="img-sobre-mi-1">
+      </div>
+    </section>
+  </main>
+  <footer id="contacto">
+    <div class="pie">
+      <p>Siempre abierto a nuevas oportunidades. Escríbeme:</p>
+      <p><a href="mailto:guillermomora@tutamail.com">guillermomora@tutamail.com</a></p>
+    </div>
+    <div class="pie">
+      <p class="pie">
+        © <span id="year"></span> Guillermo Mora
+      </p>
+    </div>
+  </footer>
+  <div class="contenedor-cv">
+    <div class="items-cv">
+      <div class="botones-cv">
+        <a class="descargar-cv boton-cv" href="doc/Guillermo-Mora-Mortes-CV.pdf"
+          download="Guillermo-Mora-Mortes-CV.pdf">
+          <img src="img/pages/home/descargarCV.svg" alt="Descargar CV" title="Descargar CV">
+        </a>
+        <div class="cerrar-cv boton-cv">
+          <img src="img/pages/home/menuCerrar.svg" alt="Cerrar CV" title="Cerrar CV">
+        </div>
+      </div>
+      <section class="seccion-cv">
+        <div class="inf-personal">
+          <img src="img/pages/home/Guillermo_Mora.webp" class="foto-cv-1" alt="Guillermo Mora Mortes">
+          <div class="inf-cv-derecha">
+            <h1>
+              <img src="img/pages/home/Guillermo_Mora.webp" class="foto-cv-2" alt="Guillermo Mora Mortes">
+              Guillermo Mora Mortes
+            </h1>
+            <hr>
+            <div>
+              <p><b>Fecha de nacimiento:</b> 27/10/2005</p>
+              <p>|</p>
+              <p><b>Nacionalidad:</b> Española </p>
+              <p>|</p>
+              <p><b>Email: </b><a href="mailto:guillermomora@tutamail.com">guillermomora@tutamail.com</a></p>
+              <p>|</p>
+              <p><b>Sitio web: </b><a href="https://guillermo-mora.github.io/">https://guillermo-mora.github.io/</a></p>
+              <p>|</p>
+              <p><b>GitHub: </b><a href="https://github.com/Guillermo-Mora">https://github.com/Guillermo-Mora</a></p>
+              <p>|</p>
+              <p><b>Linkedin: </b><a
+                  href="https://www.linkedin.com/in/guillermo-mora-mortes-b071a034a/">https://www.linkedin.com/in/guillermo-mora-mortes/</a>
+              </p>
+              <p>|</p>
+              <p><b>Dirección: </b>Valencia, España (Domicilio)</p>
+            </div>
+          </div>
+        </div>
+        <div class="inf-cv">
+          <ul>
+            <li>
+              <h2>SOBRE MÍ</h2>
+              <hr>
+              <p>
+                Soy Guillermo y me apasiona el desarrollo web y la programación. Desde siempre me ha interesado la
+                informática, y disfruto
+                aprendiendo por mi cuenta. Actualmente, estoy cursando 1º de DAM para seguir avanzando en el campo de la
+                programación.
+              </p>
+            </li>
+            <li>
+              <h2>EXPERIENCIA LABORAL</h2>
+              <hr>
+              <ul>
+                <li>
+                  <p><small>19/03/2024 – 22/06/2024 Valencia, España</small></p>
+                  <h3>DESARROLLO WEB Y AYUDANTE DE TIENDA <span>DOCTOR PHONE</span></h3>
+                  <hr>
+                  <ul>
+                    <li>Desarrollo de la web para el local, principalmente en HTML y CSS, y gestión del SEO.</li>
+                    <li>Gestión de redes sociales y publicidad.</li>
+                    <li>Rediseño del logotipo e imagen del local.</li>
+                    <li>Atención al cliente.</li>
+                    <li>Reparación de teléfonos móviles y portátiles.</li>
+                    <li>Mantenimiento de equipos informáticos.</li>
+                  </ul>
+                </li>
+                <li>
+                  <p><small>27/04/2022 – 31/08/2022 Valencia, España</small></p>
+                  <h3>CAMARERO ASALARIADO <span>LUZ DE LUNA</span></h3>
+                  <hr>
+                  <ul>
+                    <li>Atención al cliente y servicio en barra y mesas.</li>
+                    <li>Limpieza del local y mantenimiento general.</li>
+                    <li>Reposición de productos y organización en barra y almacén.</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h2>EDUCACIÓN Y FORMACIÓN</h2>
+              <hr>
+              <ul>
+                <li>
+                  <p><small>09/09/2024 – ACTUAL Valencia, España</small></p>
+                  <h3>GRADO SUPERIOR DE DESARROLLO DE APLICACIONES MULTIPLATAFORMA <span>IES Serpis</span></h3>
+                  <hr>
+                  <p><b>Web: </b><a href="https://portal.edu.gva.es/iesserpis/">https://portal.edu.gva.es/iesserpis/</a>
+                  </p>
+                </li>
+                <li>
+                  <p><small>09/09/2022 – 20/06/2024 Valencia, España</small></p>
+                  <h3>GRADO MEDIO DE SISTEMAS MICROINFORMÁTICOS Y REDES <span>IES Serpis</span></h3>
+                  <hr>
+                  <ul>
+                    <li>Instalación, configuración y mantenimiento de sistemas operativos y software.</li>
+                    <li>Gestión de redes informáticas y dispositivos de comunicación.</li>
+                    <li>Diagnóstico y reparación de equipos informáticos y periféricos.</li>
+                    <li>Administración de sistemas operativos (Windows, Linux) y redes.</li>
+                    <li>Seguridad informática y protección de datos.</li>
+                    <li>Gestión de incidencias y soporte técnico a usuarios.</li>
+                    <li>Implementación de soluciones de almacenamiento y copias de seguridad.</li>
+                    <li>Virtualización y gestión de infraestructuras de TI.</li>
+                  </ul>
+                  <div class="web-nota">
+                    <p><b>Web: </b><a
+                        href="https://portal.edu.gva.es/iesserpis/">https://portal.edu.gva.es/iesserpis/</a>
+                    </p>
+                    <p>|</p>
+                    <p><b>Calificación final </b>8,92</p>
+                  </div>
+                </li>
+                <li>
+                  <p><small>17/09/2017 – 20/06/2021 Alboraya, España</small></p>
+                  <h3>GRADUADO EN ESO <span>IES La Patacona</span></h3>
+                  <hr>
+                  <p><b>Web: </b><a
+                      href="https://portal.edu.gva.es/iespatacona/">https://portal.edu.gva.es/iespatacona/</a>
+                  </p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h2>COMPETENCIAS DIGITALES</h2>
+              <hr>
+              <div>
+                <p>Programación en Java, HTML, CSS y JavaScript</p>
+                <p>|</p>
+                <p>Administración e instalación de sistemas operativos (Windows y Linux)</p>
+                <p>|</p>
+                <p>Mantenimiento y reparación de equipos informáticos</p>
+                <p>|</p>
+                <p>Gestión de redes locales y configuración de routers</p>
+                <p>|</p>
+                <p>Manejo de máquinas virtuales y virtualización</p>
+                <p>|</p>
+                <p>Desarrollo básico de páginas web</p>
+                <p>|</p>
+                <p>Edición de video y diseño básico (Photopea/GIMP)</p>
+                <p>|</p>
+                <p>Seguridad informática y copias de seguridad</p>
+                <p>|</p>
+                <p>Gestión y mantenimiento de servidores</p>
+              </div>
+            </li>
+            <li>
+              <h2>COMPETENCIAS DE IDIOMAS</h2>
+              <hr>
+              <p>Lengua(s) materna(s): <b>ESPAÑOL</b></p>
+              <p>Otro(s) idioma(s):</p>
+              <table>
+                <tr>
+                  <td><b>INGLÉS</b></td>
+                  <td>B2</td>
+                </tr>
+                <tr>
+                  <td><b>VALENCIANO</b></td>
+                  <td>C1</td>
+                </tr>
+              </table>
+            </li>
+            <li>
+              <h2>PROYECTOS</h2>
+              <hr>
+              <ul>
+                <li>
+                  <h3>Doctor Phone - Página web para un local de reparación de dispositivos móviles</h3>
+                  <hr>
+                  <p>Página web simple y minimalista. Creada desde cero con HTML, CSS y JS.</p>
+                  <p><b>Enlace </b><a href="https://doctorphonevlc.es/">https://doctorphonevlc.es/</a></p>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h2>PREMIOS Y DISTINCIONES</h2>
+              <hr>
+              <ul>
+                <li>
+                  <p><small>17/06/2023</small></p>
+                  <h3>1er Premio en Concurso de Video de Montaje (Curso 2022-2023) – IES Serpis</h3>
+                  <hr>
+                  <p>
+                    Concurso organizado por el Departamento de Informática del IES Serpis, donde se premiaba la
+                    creatividad y calidad técnica en la
+                    edición de videos. El proyecto consistió en documentar, grabar y editar un video que mostraba el
+                    proceso completo de montaje de
+                    un ordenador de sobremesa desde cero.
+                  </p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class="contenedor-video">
+    <section class="seccion-video">
+      <div class="cerrar-video">
+        <img src="img/pages/home/menuCerrar.svg" alt="Cerrar Video" title="Cerrar Video">
+      </div>
+      <video src="video/pages/home/GSMSmart-Project.mp4" controls muted class="video-gsm"
+        poster="img/pages/home/GSMSmart_Project.webp"></video>
+    </section>
+  </div>
+  <script src="js/global/main.js" async></script>
+  <script src="js/pages/home.js" async></script>
+</body>
+
+</html>
