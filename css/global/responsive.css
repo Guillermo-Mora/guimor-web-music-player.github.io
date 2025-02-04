@@ -1,11 +1,140 @@
-@media (max-width: 480px) {
+@media (max-width: 430px) {
+    main {
+        section.section-music-player {
+            gap: 20px;
 
+            div.song-card {
+                margin-right: auto;
+                div {
+                    small {
+                        max-width: 100px;
+                    }
+                }
+            }
+
+        }
+    }
 }
 
-@media (max-width: 768px) {
-
+@media (max-width: 450px) {
+    header {
+        gap: 15px;
+    }
 }
 
-@media (max-width: 1024px) {
-    
+@media (max-width: 615px) {
+    main {
+        section.section-music-player {
+
+            div.right-controls {
+                div:nth-child(1) {
+                    display: none;
+                }
+            }
+
+            div.song-card {
+
+                div:nth-child(2),
+                div:nth-child(3) {
+                    display: none;
+                }
+            }
+        }
+    }
 }
+
+@media (min-width: 431px) and (max-width: 700px) {
+    main {
+        section.section-music-player {
+
+            div.song-card {
+                div {
+                    small {
+                        max-width: 200px;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    main {
+        section.section-music-player {
+            justify-content: space-between;
+
+            div.music-controls {
+                width: auto;
+            }
+
+            div.song-card {
+                width: auto;
+            }
+
+            div.right-controls {
+                width: auto;
+            }
+
+        }
+    }
+}
+
+@media (max-width: 850px) {
+    header {
+        div.header-search {
+            background: none;
+            border: none;
+            border-radius: 0;
+            padding: 0;
+            height: auto;
+            gap: 0;
+            justify-content: end;
+            margin-left: auto;
+
+            svg {
+                opacity: 100%;
+            }
+        }
+
+        div.header-user-logo {
+            margin-left: 0;
+        }
+    }
+
+    main {
+        section.section-music-player {
+            div.right-controls {
+
+                div:nth-child(2),
+                div:nth-child(3) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 851px) {
+    header {
+        div.header-search {
+            p::before {
+                content: 'Buscar canciones';
+            }
+        }
+    }
+}
+
+@media (max-width: 1040px) {
+    main {
+        section.section-music-player {
+            div.music-controls {
+                small {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {}
