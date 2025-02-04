@@ -10,8 +10,13 @@ const sectionMenuHome = document.getElementById('home');
 const sectionMenuExplore = document.getElementById('explore');
 const sectionMenuLibrary = document.getElementById('library');
 
+// Seleccionar los botones
+const buttonHome = document.getElementById('button-home');
+const buttonExplore = document.getElementById('button-explore');
+const buttonLibrary = document.getElementById('button-library');
+
 // Añade el event listener al botón "Home"
-sectionMenuHome.addEventListener('click', () => {
+buttonHome.addEventListener('click', () => {
     // Verifica si ya tiene la clase .section-active
     if (!sectionMenuHome.classList.contains('section-active')) {
         // Quita la clase .section-active de los demás elementos
@@ -23,7 +28,7 @@ sectionMenuHome.addEventListener('click', () => {
 });
 
 // Añade el event listener al botón "Explore"
-sectionMenuExplore.addEventListener('click', () => {
+buttonExplore.addEventListener('click', () => {
     // Verifica si ya tiene la clase .section-active
     if (!sectionMenuExplore.classList.contains('section-active')) {
         // Quita la clase .section-active de los demás elementos
@@ -35,7 +40,7 @@ sectionMenuExplore.addEventListener('click', () => {
 });
 
 // Añade el event listener al botón "Library"
-sectionMenuLibrary.addEventListener('click', () => {
+buttonLibrary.addEventListener('click', () => {
     // Verifica si ya tiene la clase .section-active
     if (!sectionMenuLibrary.classList.contains('section-active')) {
         // Quita la clase .section-active de los demás elementos
