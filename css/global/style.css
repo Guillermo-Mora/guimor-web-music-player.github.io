@@ -136,7 +136,7 @@ main {
 
             > section.section-active {
                 display: block;
-                min-height: calc(100dvh);
+                min-height: 100dvh;
             }
         }
     }
