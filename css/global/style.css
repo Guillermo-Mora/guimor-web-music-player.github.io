@@ -2,14 +2,16 @@ body {
     font-family: 'Lexenda';
     color: white;
     font-size: 1rem;
+    background-color: black;
+    background-image: radial-gradient(ellipse 90% 80% at 0% 30%, rgba(0, 18, 122, 0.233), rgba(156, 0, 161, 0.144));
+    background-attachment: fixed;
 }
 
 header {
-    position: sticky;
-    top: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.253);
-    background-color: black;
-    background-image: radial-gradient(ellipse 90% 80% at 0% 30%, rgba(0, 18, 122, 0.233), rgba(156, 0, 161, 0.185));
+    height: 74px;
+    position: fixed;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.13);
     padding: 15px 20px;
     display: flex;
     align-items: center;
@@ -25,11 +27,17 @@ header {
         display: flex;
         align-items: center;
         gap: 5px;
+
+        p {
+            font-family: "Borel";
+            top: 6px;
+            position: relative;
+        }
     }
 
     div.header-search {
-        background-color: rgba(255, 255, 255, 0.144);
-        border: 1px solid rgba(255, 255, 255, 0.253);
+        background-color: rgba(255, 255, 255, 0.082);
+        border: 1px solid rgba(255, 255, 255, 0.151);
         border-radius: 10px;
         padding: 10px 20px;
         margin: 0;
@@ -52,5 +60,91 @@ header {
         display: flex;
         padding: 3px;
         margin-left: auto;
+    }
+}
+
+main {
+
+    section.main-content {
+        display: flex;
+        flex-direction: column;
+
+        aside.menu {
+            position: sticky;
+            top: 74px;
+            height: calc(100vh - 74px);
+            width: fit-content;
+            border-right: 1px solid rgba(255, 255, 255, 0.13);
+            padding: 15px 9px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+
+            div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 5px;
+                width: 100%;
+
+                small {
+                    font-size: 10px;
+                    font-weight: 300;
+                }
+            }
+        }
+
+        div.display-content {
+            height: 2000px;
+        }
+    }
+
+    section.section-music-player {
+        height: 74px;
+        width: 100%;
+        border-top: 2px solid rgb(49, 49, 49);
+        background-color: rgb(12, 12, 12);
+        position: fixed;
+        bottom: 0;
+        display: flex;
+        padding: 15px 20px;
+        align-items: center;
+
+        div.music-controls {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 20%;
+
+            small {
+                color: rgb(131, 131, 131);
+                font-weight: 200;
+            }
+        }
+
+        div.song-card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 60%;
+
+            div {
+                display: flex;
+                flex-direction: column;
+
+                small:last-child {
+                    font-weight: 200;
+                }
+            }
+        }
+
+        div.right-controls {
+            width: 20%;
+            gap: 20px;
+            display: flex;
+            justify-content: end;
+        }
     }
 }

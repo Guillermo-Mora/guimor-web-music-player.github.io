@@ -2,3 +2,8 @@
     font-family: 'Lexenda';
     src: url('/fonts/Lexend-VariableFont_wght.ttf');
 }
+
+@font-face {
+    font-family: 'Borel';
+    src: url('/fonts/Borel-Regular.ttf');
+}
