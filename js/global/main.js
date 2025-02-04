@@ -5,6 +5,9 @@ botonMenu.addEventListener('click', () => {
     menuAside.classList.toggle('menu-visible');
 });
 
+
+//Gestion de las secciones visibles en la zona principal
+
 // Selecciona los elementos por su id
 const sectionMenuHome = document.getElementById('home');
 const sectionMenuExplore = document.getElementById('explore');
@@ -20,10 +23,12 @@ buttonHome.addEventListener('click', () => {
     // Verifica si ya tiene la clase .section-active
     if (!sectionMenuHome.classList.contains('section-active')) {
         // Quita la clase .section-active de los demás elementos
-        removeActiveClass([sectionMenuHome, sectionMenuExplore, sectionMenuLibrary]);
+        removeActiveClass([sectionMenuExplore, sectionMenuLibrary]);
+        removeActiveButton([buttonExplore, buttonLibrary]);
 
         // Añade la clase .section-active al elemento clickeado
         sectionMenuHome.classList.add('section-active');
+        buttonHome.classList.add('button-active');
     }
 });
 
@@ -32,10 +37,12 @@ buttonExplore.addEventListener('click', () => {
     // Verifica si ya tiene la clase .section-active
     if (!sectionMenuExplore.classList.contains('section-active')) {
         // Quita la clase .section-active de los demás elementos
-        removeActiveClass([sectionMenuHome, sectionMenuExplore, sectionMenuLibrary]);
+        removeActiveClass([sectionMenuHome, sectionMenuLibrary]);
+        removeActiveButton([buttonHome, buttonLibrary]);
 
         // Añade la clase .section-active al elemento clickeado
         sectionMenuExplore.classList.add('section-active');
+        buttonExplore.classList.add('button-active');
     }
 });
 
@@ -44,10 +51,12 @@ buttonLibrary.addEventListener('click', () => {
     // Verifica si ya tiene la clase .section-active
     if (!sectionMenuLibrary.classList.contains('section-active')) {
         // Quita la clase .section-active de los demás elementos
-        removeActiveClass([sectionMenuHome, sectionMenuExplore, sectionMenuLibrary]);
+        removeActiveClass([sectionMenuHome, sectionMenuExplore]);
+        removeActiveButton([buttonHome, buttonExplore]);
 
         // Añade la clase .section-active al elemento clickeado
         sectionMenuLibrary.classList.add('section-active');
+        buttonLibrary.classList.add('button-active');
     }
 });
 
@@ -58,4 +67,13 @@ function removeActiveClass(elements) {
             element.classList.remove('section-active');
         }
     });
+}
+
+// Función para quitar la clase .button-active de una lista de elementos
+function removeActiveButton(elements) {
+    elements.forEach(element => {
+        if (element.classList.contains('button-active')) {
+            element.classList.remove('button-active');
+        }
+    })
 }
