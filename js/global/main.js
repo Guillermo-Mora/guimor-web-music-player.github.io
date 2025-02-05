@@ -9,12 +9,6 @@ window.addEventListener('scroll', () => {
     }
 })
 
-let isScrolling;
-window.addEventListener('scroll', () => {
-    window.clearTimeout(isScrolling);
-    isScrolling = setTimeout(handleScroll, 50); // Ejecuta handleScroll después de 50ms
-});
-
 //Menu lateral desplegable
 
 const menuAside = document.querySelector('aside.menu');
