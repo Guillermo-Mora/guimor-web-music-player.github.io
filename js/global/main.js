@@ -1,8 +1,29 @@
+// Gestion de la opacidad del header al detectar scroll
+const headerPage = document.getElementById('header-main');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+        headerPage.classList.add('scrolled');
+    } else {
+        headerPage.classList.remove('scrolled');
+    }
+})
+
+let isScrolling;
+window.addEventListener('scroll', () => {
+    window.clearTimeout(isScrolling);
+    isScrolling = setTimeout(handleScroll, 50); // Ejecuta handleScroll después de 50ms
+});
+
+//Menu lateral desplegable
+
 const menuAside = document.querySelector('aside.menu');
 const botonMenu = document.querySelector('.header-menu-button');
+const displayContent = document.getElementById('display-content');
 
 botonMenu.addEventListener('click', () => {
     menuAside.classList.toggle('menu-visible');
+    displayContent.classList.toggle('left-spacing');
 });
 
 
