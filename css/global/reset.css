@@ -22,3 +22,7 @@ a {
 p, h1, h2, h3, h4 button {
     margin: 0;
 }
+
+h1 {
+    font-size: 1.5rem;
+}

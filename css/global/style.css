@@ -136,7 +136,7 @@ main {
         }
 
         section.display-content.left-spacing {
-            padding-left: 65.5px;
+            padding-left: 80px;
         }
 
         section.display-content {
@@ -153,43 +153,89 @@ main {
                 display: block;
                 min-height: 100dvh;
                 max-width: 85rem;
-                padding: 0 16px;
             }
 
             section.home {
-                div.music-section {
+                div.music-section::-webkit-scrollbar {
+                    /*Hidden scrollbar*/
+                    display: none;
+                    /* Chrome, Safari & Edge */
+                }
+
+                div.slider-section {
                     display: flex;
-                    gap: 40px;
-                    overflow-x: scroll;
-                    width: calc(100dvw - 65.5px - 32px);
-                    max-width: calc(1360px - 32px);
+                    flex-direction: column;
+                    gap: 20px;
 
-                    div.song-card {
+                    div.slider-section-header {
                         display: flex;
-                        flex-direction: column;
-                        width: 190px;
-                        height: auto;
-                        flex-shrink: 0;
-                        gap: 5px;
+                        align-items: center;
+                        gap: 20px;
 
-                        >div.image-card {
-                            border-radius: 20px;
-                            background-image: url('https://i.scdn.co/image/ab67616d0000b273dc30583ba717007b00cceb25');
-                            background-size: cover;
-                            width: 190px;
-                            height: 190px;
+                        img {
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 100%;
+                            aspect-ratio: 1/1;
                         }
 
-                        >div.song-info {
+                        div.scroll-controls {
+                            margin-left: auto;
                             display: flex;
-                            flex-direction: column;
+                            gap: 5px;
+                            justify-content: center;
 
-                            small:nth-child(2) {
-                                font-weight: 300;
-                                color: rgb(155, 155, 155);
+                            svg {
+                                border-radius: 5px;
+                                transition: background-color ease-in-out 0.2s;
+                            }
+
+                            svg:hover {
+                                cursor: pointer;
+                                background-color: rgba(255, 255, 255, 0.062);
                             }
                         }
-
+                    }
+                    
+                    div.music-section {
+                        display: flex;
+                        gap: 30px;
+                        overflow-x: scroll;
+                        width: calc(100dvw - 20px);
+                        max-width: calc(1360px);
+                        /*Hidden scrollbar*/
+                        scrollbar-width: none;
+                        /* Firefox */
+                        -ms-overflow-style: none;
+                        /* Internet Explorer & Edge */
+    
+                        div.song-card {
+                            display: flex;
+                            flex-direction: column;
+                            width: 190px;
+                            height: auto;
+                            flex-shrink: 0;
+                            gap: 5px;
+    
+                            >div.image-card {
+                                border-radius: 20px;
+                                background-image: url('https://i.scdn.co/image/ab67616d0000b273dc30583ba717007b00cceb25');
+                                background-size: cover;
+                                width: 190px;
+                                height: 190px;
+                            }
+    
+                            >div.song-info {
+                                display: flex;
+                                flex-direction: column;
+    
+                                small:nth-child(2) {
+                                    font-weight: 300;
+                                    color: rgb(155, 155, 155);
+                                }
+                            }
+    
+                        }
                     }
                 }
             }

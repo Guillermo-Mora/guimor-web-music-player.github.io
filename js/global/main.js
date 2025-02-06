@@ -92,3 +92,34 @@ function removeActiveButton(elements) {
         }
     })
 }
+
+// Seleccionar todos los botones de scroll
+const scrollLeftButtons = document.querySelectorAll('.scroll-left');
+const scrollRightButtons = document.querySelectorAll('.scroll-right');
+
+// Función para manejar el scroll
+const handleScroll = (sectionId, direction) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollBy({
+            left: direction === 'left' ? -220 : 220, // Ajusta el valor según sea necesario
+            behavior: 'smooth' // Desplazamiento suave
+        });
+    }
+};
+
+// Asignar eventos a los botones de scroll izquierdo
+scrollLeftButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const sectionId = button.getAttribute('data-section');
+        handleScroll(sectionId, 'left');
+    });
+});
+
+// Asignar eventos a los botones de scroll derecho
+scrollRightButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const sectionId = button.getAttribute('data-section');
+        handleScroll(sectionId, 'right');
+    });
+});
