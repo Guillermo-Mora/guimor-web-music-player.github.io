@@ -149,3 +149,43 @@
 }
 
 @media (max-width: 1024px) {}
+
+@media (max-width: 1440px) {
+    #aside-menu-closed {
+        display: block;
+        visibility: hidden;
+        margin-top: -134px;
+        padding-bottom: 134px;
+        margin-left: -60px;
+        left: 60px;
+        width: 100%;
+        height: calc(100% + 134px);
+        position: absolute;
+        background-color: rgba(5, 0, 27, 0.664);
+        opacity: 0;
+        transition: visibility ease-in-out 0.2s, opacity ease-in-out 0.2s;
+    }
+
+    #aside-menu-closed.active-aside-menu {
+        visibility: visible;
+        opacity: 100%;
+    }
+
+    .scroll-blocked {
+        overflow-y: hidden;
+    }
+
+        main {
+            section.main-content {
+
+                aside.menu {
+                    background-color: rgb(5, 0, 27);
+                }
+
+
+                section.display-content.left-spacing {
+                    padding-left: 0;
+                }
+            }
+        }
+    }

@@ -20,6 +20,7 @@ header {
     display: flex;
     align-items: center;
     gap: 40px;
+    z-index: 1;
     transition: background-color ease-in-out 0.1s;
 
     div.header-menu-button {
@@ -93,6 +94,7 @@ main {
             flex-direction: column;
             align-items: center;
             gap: 9px;
+            z-index: 1;
             transform: translateX(-100%);
             transition: transform ease-in-out 0.2s;
 
@@ -252,6 +254,7 @@ main {
         display: flex;
         padding: 15px 20px;
         align-items: center;
+        z-index: 1;
 
         div.music-controls {
             display: flex;

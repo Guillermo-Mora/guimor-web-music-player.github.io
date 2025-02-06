@@ -12,7 +12,7 @@
   <link rel="stylesheet" type="text/css" href="css/global/responsive.css">
 </head>
 
-<body>
+<body id="body-main" class="scroll-blocked">
   <header id="header-main">
     <div class="header-menu-button">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -96,14 +96,28 @@
         </div>
       </aside>
       <section id="display-content" class="display-content left-spacing">
+        <section id="aside-menu-closed" class="active-aside-menu">
+        </section>
         <section id="home" class="home section-active">
           <div class="slider-section">
             <div class="slider-section-header">
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-rzxcUPpWNLduPXEGlE-6Uwn396TtP5VnfQ&s">
               <h1>The Beatles</h1>
               <div class="scroll-controls">
-                <svg class="scroll-left" data-section="section-1" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 6l-6 6l6 6" /></svg>
-                <svg class="scroll-right" data-section="section-1" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                <svg class="scroll-left" data-section="section-1" xmlns="http://www.w3.org/2000/svg" width="24"
+                  height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M15 6l-6 6l6 6" />
+                </svg>
+                <svg class="scroll-right" data-section="section-1" xmlns="http://www.w3.org/2000/svg" width="24"
+                  height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M9 6l6 6l-6 6" />
+                </svg>
               </div>
             </div>
             <div class="music-section" id="section-1">
