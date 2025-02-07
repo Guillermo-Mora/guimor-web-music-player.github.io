@@ -32,7 +32,7 @@ div#loading-screen {
     align-items: center;
     justify-content: center;
     gap: 2dvw;
-    transition: opacity ease-out 1.5s;
+    transition: opacity ease-out 0.2s;
 
     h1 {
         font-family: 'Borel';

@@ -18,10 +18,12 @@ const divLoading = document.getElementById('loading-screen');
 
 //Animacion inicial
 logoGuimorMusic.classList.add('load-animation');
-divLoading.classList.add('div-load-animation');
+setTimeout(() => {
+    divLoading.classList.add('div-load-animation');
+}, 500)
 setTimeout(() => {
     divLoading.classList.add('no-active');
-}, 1500);
+}, 1000);
 //
 
 // Disposicion inicial para dispositivos móviles-tablets
