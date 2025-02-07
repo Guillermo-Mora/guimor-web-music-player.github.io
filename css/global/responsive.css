@@ -169,6 +169,7 @@
     #aside-menu-closed.active-aside-menu {
         visibility: visible;
         opacity: 100%;
+        z-index: 1;
     }
 
     .scroll-blocked {

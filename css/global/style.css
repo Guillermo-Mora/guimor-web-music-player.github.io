@@ -27,7 +27,7 @@ div#loading-screen {
     background-color: black;
     background-image: radial-gradient(ellipse 90% 80% at 0% 30%, rgba(0, 18, 122, 0.233), rgba(156, 0, 161, 0.144));
     background-attachment: fixed;
-    z-index: 2;
+    z-index: 3;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -53,6 +53,7 @@ div#loading-screen {
         rotate: 0deg;
     }
 }
+
 /*---*/
 
 header {
@@ -64,7 +65,7 @@ header {
     display: flex;
     align-items: center;
     gap: 40px;
-    z-index: 1;
+    z-index: 2;
     transition: background-color ease-in-out 0.1s;
 
     div.header-menu-button {
@@ -138,7 +139,7 @@ main {
             flex-direction: column;
             align-items: center;
             gap: 9px;
-            z-index: 1;
+            z-index: 2;
             transform: translateX(-100%);
             transition: transform ease-in-out 0.2s;
 
@@ -212,6 +213,7 @@ main {
                     display: flex;
                     flex-direction: column;
                     gap: 20px;
+                    margin-bottom: 60px;
 
                     div.slider-section-header {
                         display: flex;
@@ -236,7 +238,7 @@ main {
                             }
                         }
                     }
-                    
+
                     div.music-section {
                         display: flex;
                         gap: 30px;
@@ -248,7 +250,7 @@ main {
                         /* Firefox */
                         -ms-overflow-style: none;
                         /* Internet Explorer & Edge */
-    
+
                         div.song-card {
                             display: flex;
                             flex-direction: column;
@@ -256,25 +258,51 @@ main {
                             height: auto;
                             flex-shrink: 0;
                             gap: 5px;
-    
+
+                            >div.image-card:hover {
+                                cursor: pointer;
+
+                                >img {
+                                    opacity: 1;
+                                    background-color: #0000006e;
+                                }
+                            }
+
                             >div.image-card {
                                 border-radius: 20px;
-                                background-image: url('https://i.scdn.co/image/ab67616d0000b273dc30583ba717007b00cceb25');
                                 background-size: cover;
                                 width: 190px;
                                 height: 190px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+
+                                >img {
+                                    opacity: 0;
+                                    width: 190px;
+                                    height: 190px;
+                                    aspect-ratio: 1/1;
+                                    border-radius: 20px;
+                                    padding: 70px;
+                                    transition: background-color ease-in-out 0.2s, opacity, ease-in-out 0.2s;
+                                }
                             }
-    
+
                             >div.song-info {
                                 display: flex;
                                 flex-direction: column;
-    
+
                                 small:nth-child(2) {
                                     font-weight: 300;
                                     color: rgb(155, 155, 155);
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                    display: inline-block;
+                                    max-width: 300px;
                                 }
                             }
-    
+
                         }
                     }
                 }

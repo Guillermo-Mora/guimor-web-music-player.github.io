@@ -1,20 +1,29 @@
+// Header
 const headerPage = document.getElementById('header-main');
+// Body
 const bodyMain = document.getElementById('body-main');
+// Menu lateral
 const menuAside = document.querySelector('aside.menu');
+// Boton hamburguesa header
 const botonMenu = document.querySelector('.header-menu-button');
+// Seccion principal donde se muestra el contenido
 const displayContent = document.getElementById('display-content');
+// Seccion que se muestra cuando el menu lateral esta desplegado en pantallas pequeñas
 const sectionBlocker = document.getElementById('aside-menu-closed');
 // Secciones de la pagina principal
 const sectionMenuHome = document.getElementById('home');
 const sectionMenuExplore = document.getElementById('explore');
 const sectionMenuLibrary = document.getElementById('library');
-// Botones del menu aside
+// Botones del menu lateral
 const buttonHome = document.getElementById('button-home');
 const buttonExplore = document.getElementById('button-explore');
 const buttonLibrary = document.getElementById('button-library');
 //Pagina de carga
 const logoGuimorMusic = document.getElementById('loading-svg');
 const divLoading = document.getElementById('loading-screen');
+// Seleccionar todos los botones de scroll
+const scrollLeftButtons = document.querySelectorAll('.scroll-left');
+const scrollRightButtons = document.querySelectorAll('.scroll-right');
 
 //Animacion inicial
 logoGuimorMusic.classList.add('load-animation');
@@ -140,17 +149,15 @@ function removeActiveButton(elements) {
     })
 }
 
-// Seleccionar todos los botones de scroll
-const scrollLeftButtons = document.querySelectorAll('.scroll-left');
-const scrollRightButtons = document.querySelectorAll('.scroll-right');
-
 // Función para manejar el scroll
 const handleScroll = (sectionId, direction) => {
     const section = document.getElementById(sectionId);
     if (section) {
         section.scrollBy({
-            left: direction === 'left' ? -220 : 220, // Valor del scroll
-            behavior: 'smooth' // Desplazamiento suave
+            // Valor del scroll
+            left: direction === 'left' ? -220 : 220,
+            // Desplazamiento suave
+            behavior: 'smooth'
         });
     }
 };
