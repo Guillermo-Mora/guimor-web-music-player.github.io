@@ -1,6 +1,27 @@
-// Gestion de la opacidad del header al detectar scroll
 const headerPage = document.getElementById('header-main');
+const bodyMain = document.getElementById('body-main');
+const menuAside = document.querySelector('aside.menu');
+const botonMenu = document.querySelector('.header-menu-button');
+const displayContent = document.getElementById('display-content');
+const sectionBlocker = document.getElementById('aside-menu-closed');
+// Secciones de la pagina principal
+const sectionMenuHome = document.getElementById('home');
+const sectionMenuExplore = document.getElementById('explore');
+const sectionMenuLibrary = document.getElementById('library');
+// Botones del menu aside
+const buttonHome = document.getElementById('button-home');
+const buttonExplore = document.getElementById('button-explore');
+const buttonLibrary = document.getElementById('button-library');
 
+// Disposicion inicial para dispositivos móviles-tablets
+if (window.innerWidth <= 1440) {
+    menuAside.classList.remove('menu-visible');
+    sectionBlocker.classList.remove('active-aside-menu');
+    displayContent.classList.remove('left-spacing');
+    bodyMain.classList.remove('scroll-blocked');
+}
+
+// Opacidad del header a solida al detectar que no esta arriba del todo
 window.addEventListener('scroll', () => {
     if (window.scrollY > 0) {
         headerPage.classList.add('scrolled');
@@ -9,14 +30,37 @@ window.addEventListener('scroll', () => {
     }
 })
 
-//Menu lateral desplegable
 
-const bodyMain = document.getElementById('body-main');
-const menuAside = document.querySelector('aside.menu');
-const botonMenu = document.querySelector('.header-menu-button');
-const displayContent = document.getElementById('display-content');
-const sectionBlocker = document.getElementById('aside-menu-closed');
+//Verificar cambios en el tamaño de la ventana, para evitar problemas de espaciados y botones
 
+// Variable para almacenar el estado anterior de la media query
+let isBelow1440 = window.matchMedia('(max-width: 1440px)').matches;
+
+// Función para manejar el cambio de resolución
+const handleResolutionChange = () => {
+    // Verifica si la resolución actual es mayor a 1440px
+    const isNowAbove1440 = !window.matchMedia('(max-width: 1440px)').matches;
+
+    // Si antes era menor o igual a 1440px y ahora es mayor
+    if (isBelow1440 && isNowAbove1440) {
+        // Ejecuta el if de comprobación
+        if (
+            sectionBlocker.classList.contains('active-aside-menu') &&
+            !displayContent.classList.contains('left-spacing')
+        ) {
+            displayContent.classList.add('left-spacing');
+        }
+    }
+
+    // Actualiza el estado anterior de la media query
+    isBelow1440 = !isNowAbove1440;
+};
+
+// Escuchar el evento resize
+window.addEventListener('resize', handleResolutionChange);
+//
+
+// Al clicar sobre el boton hamburguesa
 botonMenu.addEventListener('click', () => {
     menuAside.classList.toggle('menu-visible');
     sectionBlocker.classList.toggle('active-aside-menu');
@@ -26,33 +70,10 @@ botonMenu.addEventListener('click', () => {
     }
 });
 
-
-if (window.innerWidth <= 1440) {
-    menuAside.classList.remove('menu-visible');
-    sectionBlocker.classList.remove('active-aside-menu');
-    displayContent.classList.remove('left-spacing');
-    bodyMain.classList.remove('scroll-blocked');
-}
-
-//Gestion de las secciones visibles en la zona principal
-
-// Selecciona los elementos por su id
-const sectionMenuHome = document.getElementById('home');
-const sectionMenuExplore = document.getElementById('explore');
-const sectionMenuLibrary = document.getElementById('library');
-
-// Seleccionar los botones
-const buttonHome = document.getElementById('button-home');
-const buttonExplore = document.getElementById('button-explore');
-const buttonLibrary = document.getElementById('button-library');
-
-// Añade el event listener al botón "Home"
+// Clic sobre el botón "Home"
 buttonHome.addEventListener('click', () => {
-    // Quita la clase .section-active de los demás elementos
     removeActiveClass([sectionMenuExplore, sectionMenuLibrary]);
     removeActiveButton([buttonExplore, buttonLibrary]);
-
-    // Añade la clase .section-active al elemento clickeado
     sectionMenuHome.classList.add('section-active');
     buttonHome.classList.add('button-active');
     if (window.innerWidth <= 1440) {
@@ -62,13 +83,10 @@ buttonHome.addEventListener('click', () => {
     }
 });
 
-// Añade el event listener al botón "Explore"
+// Clic sobre el botón "Explore"
 buttonExplore.addEventListener('click', () => {
-    // Quita la clase .section-active de los demás elementos
     removeActiveClass([sectionMenuHome, sectionMenuLibrary]);
     removeActiveButton([buttonHome, buttonLibrary]);
-
-    // Añade la clase .section-active al elemento clickeado
     sectionMenuExplore.classList.add('section-active');
     buttonExplore.classList.add('button-active');
     if (window.innerWidth <= 1440) {
@@ -78,13 +96,10 @@ buttonExplore.addEventListener('click', () => {
     }
 });
 
-// Añade el event listener al botón "Library"
+// Clic sobre el botón "Library"
 buttonLibrary.addEventListener('click', () => {
-    // Quita la clase .section-active de los demás elementos
     removeActiveClass([sectionMenuHome, sectionMenuExplore]);
     removeActiveButton([buttonHome, buttonExplore]);
-
-    // Añade la clase .section-active al elemento clickeado
     sectionMenuLibrary.classList.add('section-active');
     buttonLibrary.classList.add('button-active');
     if (window.innerWidth <= 1440) {
@@ -121,7 +136,7 @@ const handleScroll = (sectionId, direction) => {
     const section = document.getElementById(sectionId);
     if (section) {
         section.scrollBy({
-            left: direction === 'left' ? -220 : 220, // Ajusta el valor según sea necesario
+            left: direction === 'left' ? -220 : 220, // Valor del scroll
             behavior: 'smooth' // Desplazamiento suave
         });
     }
