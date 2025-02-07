@@ -12,6 +12,20 @@ const sectionMenuLibrary = document.getElementById('library');
 const buttonHome = document.getElementById('button-home');
 const buttonExplore = document.getElementById('button-explore');
 const buttonLibrary = document.getElementById('button-library');
+//Pagina de carga
+const logoGuimorMusic = document.getElementById('loading-svg');
+const divLoading = document.getElementById('loading-screen');
+
+//Animacion inicial
+logoGuimorMusic.classList.add('load-animation');
+divLoading.classList.add('div-load-animation');
+setTimeout(() => {
+    bodyMain.classList.remove('loading-screen');
+}, 1000);
+setTimeout(() => {
+    divLoading.classList.add('no-active');
+}, 1000);
+//
 
 // Disposicion inicial para dispositivos móviles-tablets
 if (window.innerWidth <= 1440) {
