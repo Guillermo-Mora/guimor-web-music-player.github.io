@@ -152,14 +152,22 @@ function removeActiveButton(elements) {
 // Función para manejar el scroll
 const handleScroll = (sectionId, direction) => {
     const section = document.getElementById(sectionId);
-    if (section) {
-        section.scrollBy({
-            // Valor del scroll
-            left: direction === 'left' ? -220 : 220,
-            // Desplazamiento suave
-            behavior: 'smooth'
-        });
+    if (!section) return;
+
+    let scrollAmount;
+
+    switch (sectionId) {
+        case 'section-3':
+            scrollAmount = 320;
+            break;
+        default:
+            scrollAmount = 220;
     }
+
+    section.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+    });
 };
 
 // Asignar eventos a los botones de scroll izquierdo

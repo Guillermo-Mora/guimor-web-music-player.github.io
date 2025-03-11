@@ -306,12 +306,20 @@ main {
                         }
                     }
 
-                    div.music-container-type2 {
+                    div.music-section-type2 {
                         display: flex;
-                        flex-wrap: wrap;
+                        flex-direction: row;
                         gap: 30px;
-                        height: auto;
-    
+                        overflow-x: scroll;
+                        scrollbar-width: none;
+                        -ms-overflow-style: none;
+                        width: calc(100dvw - 20px);
+                        max-width: calc(1360px);
+
+
+                        div.column-songs {
+                            flex-shrink: 0;
+
                             div.song-card:hover {
                                 cursor: pointer;
                                 > div.image-card {
@@ -323,12 +331,11 @@ main {
                             }
 
                             div.song-card {
-                                width: 355px;
+                                width: 290px;
                                 display: flex;
                                 flex-direction: row;
                                 align-items: center;
                                 height: auto;
-                                flex-shrink: 0;
                                 gap: 10px;
                              
                                 >div.image-card {
@@ -362,12 +369,12 @@ main {
                                         overflow: hidden;
                                         text-overflow: ellipsis;
                                         display: inline-block;
-                                        max-width: 300px;
+                                        max-width: 200px;
                                     }
                                 }
     
                             }
-                        
+                        }
                     }
                 }
             }
