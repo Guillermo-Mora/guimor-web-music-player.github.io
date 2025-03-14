@@ -7,9 +7,49 @@ body {
     background-attachment: fixed;
 }
 
-header.scrolled {
-    background-color: rgb(5, 0, 27);
+/*Barra Scroll Lateral*/
+/* Variables globales */
+:root {
+    --scrollbar-track: rgb(5, 0, 27);
+    --scrollbar-thumb: #ffffff;
+    --scrollbar-thumb-hover: #929292;
+    --scrollbar-border: rgb(5, 0, 27);
+    --scrollbar-width: 4px;
 }
+
+/* Firefox */
+@supports (-moz-appearance: none) {
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+    }
+}
+
+/* Chrome, Edge, Safari */
+*::-webkit-scrollbar {
+    width: var(--scrollbar-width); /* Barra vertical */
+    height: var(--scrollbar-width); /* Barra horizontal */
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 5px;
+    border: 1px solid var(--scrollbar-border);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+}
+
+/* Internet Explorer y Edge Legacy */
+body {
+    scrollbar-base-color: var(--scrollbar-thumb);
+}
+/*---*/
 
 /*Exclusivo de la pantalla de carga*/
 div#loading-screen.no-active {
@@ -66,7 +106,7 @@ header {
     align-items: center;
     gap: 40px;
     z-index: 2;
-    transition: background-color ease-in-out 0.1s;
+    background-color: rgb(5, 0, 27);
 
     div.header-menu-button {
         display: flex;
@@ -80,6 +120,7 @@ header {
     }
 
     div.header-logo {
+        user-select: none;
         display: flex;
         align-items: center;
         gap: 5px;
@@ -129,6 +170,7 @@ main {
         overflow-x: hidden;
 
         aside.menu {
+            user-select: none;
             position: fixed;
             top: 74px;
             height: calc(100dvh - 74px);
@@ -318,11 +360,15 @@ main {
 
 
                         div.column-songs {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
                             flex-shrink: 0;
 
                             div.song-card:hover {
                                 cursor: pointer;
-                                > div.image-card {
+
+                                >div.image-card {
                                     img {
                                         opacity: 1;
                                         background-color: #0000006e;
@@ -337,7 +383,7 @@ main {
                                 align-items: center;
                                 height: auto;
                                 gap: 10px;
-                             
+
                                 >div.image-card {
                                     border-radius: 10px;
                                     background-size: cover;
@@ -346,7 +392,7 @@ main {
                                     display: flex;
                                     align-items: center;
                                     justify-content: center;
-    
+
                                     >img {
                                         opacity: 0;
                                         width: 50px;
@@ -357,11 +403,11 @@ main {
                                         transition: background-color ease-in-out 0.2s, opacity, ease-in-out 0.2s;
                                     }
                                 }
-    
+
                                 >div.song-info {
                                     display: flex;
                                     flex-direction: column;
-    
+
                                     small:nth-child(2) {
                                         font-weight: 300;
                                         color: rgb(155, 155, 155);
@@ -372,7 +418,7 @@ main {
                                         max-width: 200px;
                                     }
                                 }
-    
+
                             }
                         }
                     }

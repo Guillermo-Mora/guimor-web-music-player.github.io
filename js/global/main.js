@@ -1,5 +1,3 @@
-// Header
-const headerPage = document.getElementById('header-main');
 // Body
 const bodyMain = document.getElementById('body-main');
 // Menu lateral
@@ -42,16 +40,6 @@ if (window.innerWidth <= 1440) {
     displayContent.classList.remove('left-spacing');
     bodyMain.classList.remove('scroll-blocked');
 }
-
-// Opacidad del header a solida al detectar que no esta arriba del todo
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 0) {
-        headerPage.classList.add('scrolled');
-    } else {
-        headerPage.classList.remove('scrolled');
-    }
-})
-
 
 //Verificar cambios en el tamaño de la ventana, para evitar problemas de espaciados y botones
 
