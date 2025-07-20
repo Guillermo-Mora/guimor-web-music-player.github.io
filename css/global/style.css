@@ -11,6 +11,91 @@ body {
     overflow-y: hidden;
 }
 
+/*Menú de usuario*/
+
+#user-menu {
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    position: fixed;
+    background-color: rgb(5, 0, 27);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    transition: visibility ease-in-out 0.2s, opacity ease-in-out 0.2s;
+    top: 73px;
+    margin-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    right: 0;
+    /*visibility: hidden;*/
+    /*opacity: 0;*/
+    z-index: 1;
+
+    span {
+        margin-left: 37px;
+    }
+
+    svg {
+        position: fixed;
+        transition: stroke ease-in-out 0.2s;
+    }
+
+
+    a {
+        color: white;
+        transition: color ease-in-out 0.2s;
+    }
+
+    a:hover {
+        color: rgb(168, 168, 168);
+
+        > svg {
+            stroke: rgb(168, 168, 168);
+        }
+    }
+
+    >div.user-sections {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        >div.user-mains {
+            padding-left: 20px;
+            padding-right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+            padding-bottom: 15px;
+
+            >div.name-pic {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+
+                >img {
+                    width: 42px;
+                    border-radius: 100%;
+                }
+            }
+        }
+
+        >div.user-contact {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+}
+
+.user-menu-visible {
+    visibility: visible;
+    opacity: 100%;
+    z-index: 1;
+}
+
+/*---*/
+
 /*Barra Scroll Lateral*/
 /* Variables globales */
 :root {
@@ -31,8 +116,10 @@ body {
 
 /* Chrome, Edge, Safari */
 *::-webkit-scrollbar {
-    width: var(--scrollbar-width); /* Barra vertical */
-    height: var(--scrollbar-width); /* Barra horizontal */
+    width: var(--scrollbar-width);
+    /* Barra vertical */
+    height: var(--scrollbar-width);
+    /* Barra horizontal */
 }
 
 *::-webkit-scrollbar-track {
@@ -53,6 +140,7 @@ body {
 body {
     scrollbar-base-color: var(--scrollbar-thumb);
 }
+
 /*---*/
 
 /*Exclusivo de la pantalla de carga*/
@@ -166,7 +254,7 @@ header {
     }
 
     div.header-user-logo:hover {
-       cursor: pointer;
+        cursor: pointer;
     }
 }
 
