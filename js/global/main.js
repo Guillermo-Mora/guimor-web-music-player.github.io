@@ -44,7 +44,6 @@ if (window.innerWidth <= 1555) {
 // Al clicar sobre el boton de "usuario"
 userPage.addEventListener('click', () => {
     menuAside.classList.toggle('menu-visible');
-    bodyMain.classList.toggle('scroll-blocked');
 });
 
 //Clic sobre el botón hamburguesa
