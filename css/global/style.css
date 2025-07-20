@@ -418,8 +418,55 @@ main {
                                         max-width: 200px;
                                     }
                                 }
-
                             }
+                        }
+                    }
+
+                    div.music-section-type3 {
+                        display: flex;
+                        gap: 30px;
+                        overflow-x: scroll;
+                        width: calc(100dvw - 20px);
+                        max-width: calc(1360px);
+                        /*Hidden scrollbar*/
+                        scrollbar-width: none;
+                        /* Firefox */
+                        -ms-overflow-style: none;
+                        /* Internet Explorer & Edge */
+
+                        div.song-card {
+                            display: flex;
+                            flex-direction: column;
+                            width: 190px;
+                            height: auto;
+                            flex-shrink: 0;
+                            gap: 20px;
+
+                            >div.image-card:hover {
+                                cursor: pointer;
+                                filter: brightness(0.7) contrast(1.2) saturate(0.8);
+                            }
+
+                            >div.image-card {
+                                border-radius: 100%;
+                                background-size: cover;
+                                width: 190px;
+                                height: 190px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                transition: filter ease-in-out 0.2s;
+                            }
+
+                            >div.song-info {
+                                display: flex;
+                                flex-direction: column;
+
+                                small {
+                                    text-align: center;
+                                }
+                            }
+
                         }
                     }
                 }

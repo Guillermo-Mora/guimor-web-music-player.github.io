@@ -155,12 +155,11 @@
         display: block;
         visibility: hidden;
         margin-top: -134px;
-        padding-bottom: 134px;
         margin-left: -60px;
         left: 60px;
         width: 100%;
-        height: calc(100% + 134px);
-        position: absolute;
+        height: 100%;
+        position: fixed;
         background-color: rgba(5, 0, 27, 0.664);
         opacity: 0;
         transition: visibility ease-in-out 0.2s, opacity ease-in-out 0.2s;
