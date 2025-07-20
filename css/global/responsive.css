@@ -150,7 +150,7 @@
 
 @media (max-width: 1024px) {}
 
-@media (max-width: 1440px) {
+@media (max-width: 1555px) {
     #aside-menu-closed {
         display: block;
         visibility: hidden;
@@ -171,20 +171,11 @@
         z-index: 1;
     }
 
-    .scroll-blocked {
-        overflow-y: hidden;
-    }
-
         main {
             section.main-content {
 
                 aside.menu {
                     background-color: rgb(5, 0, 27);
-                }
-
-
-                section.display-content.left-spacing {
-                    padding-left: 0;
                 }
             }
         }

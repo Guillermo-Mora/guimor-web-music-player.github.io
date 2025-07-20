@@ -7,6 +7,10 @@ body {
     background-attachment: fixed;
 }
 
+.scroll-blocked {
+    overflow-y: hidden;
+}
+
 /*Barra Scroll Lateral*/
 /* Variables globales */
 :root {
@@ -160,10 +164,13 @@ header {
         padding: 3px;
         margin-left: auto;
     }
+
+    div.header-user-logo:hover {
+       cursor: pointer;
+    }
 }
 
 main {
-
     section.main-content {
         display: flex;
         flex-direction: column;
@@ -222,10 +229,6 @@ main {
 
         aside.menu-visible {
             transform: translateX(0);
-        }
-
-        section.display-content.left-spacing {
-            padding-left: 80px;
         }
 
         section.display-content {

@@ -22,6 +22,8 @@ const divLoading = document.getElementById('loading-screen');
 // Seleccionar todos los botones de scroll
 const scrollLeftButtons = document.querySelectorAll('.scroll-left');
 const scrollRightButtons = document.querySelectorAll('.scroll-right');
+//Boton pagina usuario
+const userPage = document.getElementById('userLogo');
 
 //Animacion inicial
 logoGuimorMusic.classList.add('load-animation');
@@ -34,50 +36,21 @@ setTimeout(() => {
 //
 
 // Disposicion inicial para dispositivos móviles-tablets
-if (window.innerWidth <= 1440) {
+if (window.innerWidth <= 1555) {
     menuAside.classList.remove('menu-visible');
     sectionBlocker.classList.remove('active-aside-menu');
-    displayContent.classList.remove('left-spacing');
-    bodyMain.classList.remove('scroll-blocked');
 }
 
-//Verificar cambios en el tamaño de la ventana, para evitar problemas de espaciados y botones
+// Al clicar sobre el boton de "usuario"
+userPage.addEventListener('click', () => {
+    menuAside.classList.toggle('menu-visible');
+    bodyMain.classList.toggle('scroll-blocked');
+});
 
-// Variable para almacenar el estado anterior de la media query
-let isBelow1440 = window.matchMedia('(max-width: 1440px)').matches;
-
-// Función para manejar el cambio de resolución
-const handleResolutionChange = () => {
-    // Verifica si la resolución actual es mayor a 1440px
-    const isNowAbove1440 = !window.matchMedia('(max-width: 1440px)').matches;
-
-    // Si antes era menor o igual a 1440px y ahora es mayor
-    if (isBelow1440 && isNowAbove1440) {
-        // Ejecuta el if de comprobación
-        if (
-            sectionBlocker.classList.contains('active-aside-menu') &&
-            !displayContent.classList.contains('left-spacing')
-        ) {
-            displayContent.classList.add('left-spacing');
-        }
-    }
-
-    // Actualiza el estado anterior de la media query
-    isBelow1440 = !isNowAbove1440;
-};
-
-// Escuchar el evento resize
-window.addEventListener('resize', handleResolutionChange);
-//
-
-// Al clicar sobre el boton hamburguesa
+//Clic sobre el botón hamburguesa
 botonMenu.addEventListener('click', () => {
     menuAside.classList.toggle('menu-visible');
     sectionBlocker.classList.toggle('active-aside-menu');
-    displayContent.classList.toggle('left-spacing');
-    if (window.innerWidth <= 1440) {
-        bodyMain.classList.toggle('scroll-blocked');
-    }
 });
 
 // Clic sobre el botón "Home"
@@ -86,10 +59,9 @@ buttonHome.addEventListener('click', () => {
     removeActiveButton([buttonExplore, buttonLibrary]);
     sectionMenuHome.classList.add('section-active');
     buttonHome.classList.add('button-active');
-    if (window.innerWidth <= 1440) {
+    if (window.innerWidth <= 1555) {
         sectionBlocker.classList.toggle('active-aside-menu');
         menuAside.classList.toggle('menu-visible');
-        bodyMain.classList.toggle('scroll-blocked');
     }
 });
 
@@ -99,10 +71,9 @@ buttonExplore.addEventListener('click', () => {
     removeActiveButton([buttonHome, buttonLibrary]);
     sectionMenuExplore.classList.add('section-active');
     buttonExplore.classList.add('button-active');
-    if (window.innerWidth <= 1440) {
+    if (window.innerWidth <= 1555) {
         sectionBlocker.classList.toggle('active-aside-menu');
         menuAside.classList.toggle('menu-visible');
-        bodyMain.classList.toggle('scroll-blocked');
     }
 });
 
@@ -112,10 +83,9 @@ buttonLibrary.addEventListener('click', () => {
     removeActiveButton([buttonHome, buttonExplore]);
     sectionMenuLibrary.classList.add('section-active');
     buttonLibrary.classList.add('button-active');
-    if (window.innerWidth <= 1440) {
+    if (window.innerWidth <= 1555) {
         sectionBlocker.classList.toggle('active-aside-menu');
         menuAside.classList.toggle('menu-visible');
-        bodyMain.classList.toggle('scroll-blocked');
     }
 });
 
