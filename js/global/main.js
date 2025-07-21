@@ -156,10 +156,10 @@ const handleScroll = (sectionId, direction) => {
 
     switch (sectionId) {
         case 'section-3':
-            scrollAmount = 320;
+            scrollAmount = 349;
             break;
         default:
-            scrollAmount = 220;
+            scrollAmount = 232;
     }
 
     section.scrollBy({
