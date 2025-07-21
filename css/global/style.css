@@ -378,7 +378,12 @@ main {
                             gap: 5px;
                             justify-content: center;
 
-                            svg:hover {
+                            img {
+                                width: 24px;
+                                user-select: none;
+                            }
+
+                            img:hover {
                                 cursor: pointer;
                             }
                         }

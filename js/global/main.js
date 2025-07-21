@@ -1,54 +1,32 @@
-// Body
 const bodyMain = document.getElementById('body-main');
-// Menu lateral
 const menuAside = document.getElementById('menu-buttons');
-// Boton hamburguesa header
 const botonMenu = document.querySelector('.header-menu-button');
-// Seccion principal donde se muestra el contenido
 const displayContent = document.getElementById('display-content');
-// Seccion que se muestra cuando el menu lateral esta desplegado en pantallas pequeñas
 const sectionBlocker = document.getElementById('aside-menu-closed');
-// Secciones de la pagina principal
 const sectionMenuHome = document.getElementById('home');
 const sectionMenuExplore = document.getElementById('explore');
 const sectionMenuLibrary = document.getElementById('library');
-// Botones del menu lateral
 const buttonHome = document.getElementById('button-home');
 const buttonExplore = document.getElementById('button-explore');
 const buttonLibrary = document.getElementById('button-library');
-//Pagina de carga
 const logoGuimorMusic = document.getElementById('loading-svg');
 const divLoading = document.getElementById('loading-screen');
-// Seleccionar todos los botones de scroll
 const scrollLeftButtons = document.querySelectorAll('.scroll-left');
 const scrollRightButtons = document.querySelectorAll('.scroll-right');
-//Boton pagina usuario
 const userPage = document.getElementById('userLogo');
 const userMenu = document.getElementById('user-menu');
 let isUserMenuOpen = false;
 let isAsideMenuOpen;
 const phoneResolution = 1555;
-
 const menuButtons = document.getElementById('menu-buttons');
-
-// Configuración de mapeo entre botones y secciones
+const sliderSections = document.querySelectorAll('.slider-section');
 const menuAsideSections = [
-    {
-        button: buttonHome,
-        section: sectionMenuHome,
-    },
-    {
-        button: buttonExplore,
-        section: sectionMenuExplore,
-    },
-    {
-        button: buttonLibrary,
-        section: sectionMenuLibrary,
-    }
+    { button: buttonHome, section: sectionMenuHome },
+    { button: buttonExplore, section: sectionMenuExplore },
+    { button: buttonLibrary, section: sectionMenuLibrary }
 ];
 
 
-//Animacion inicial
 logoGuimorMusic.classList.add('load-animation');
 setTimeout(() => {
     divLoading.classList.add('div-load-animation');
@@ -56,9 +34,8 @@ setTimeout(() => {
 setTimeout(() => {
     divLoading.classList.add('no-active');
 }, 1000);
-//
 
-// Disposicion inicial para dispositivos móviles-tablets
+
 if (window.innerWidth <= phoneResolution) {
     isAsideMenuOpen = false;
     menuAside.classList.remove('menu-visible');
@@ -67,7 +44,50 @@ if (window.innerWidth <= phoneResolution) {
     isAsideMenuOpen = true;
 }
 
-// Al clicar sobre el boton de "usuario"
+
+document.addEventListener('DOMContentLoaded', function () {
+    sliderSections.forEach((section, index) => {
+        const scrollZone = section.querySelector('.scroll-zone')
+        const scrollControls = section.querySelectorAll('.scroll-button');
+
+        const sectionNumber = index + 1
+        const sectionId = "section-" + sectionNumber
+
+        scrollZone.id = sectionId
+        scrollControls.forEach(control => {
+            control.setAttribute('data-section', sectionId);
+        })
+    });
+});
+const handleScroll = (sectionId, direction) => {
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+    let scrollAmount;
+    switch (sectionId) {
+        case 'section-3':
+            scrollAmount = 349;
+            break;
+        default:
+            scrollAmount = 232;
+    }
+    section.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+    });
+};
+scrollLeftButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const sectionId = button.getAttribute('data-section');
+        handleScroll(sectionId, 'left');
+    });
+});
+scrollRightButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const sectionId = button.getAttribute('data-section');
+        handleScroll(sectionId, 'right');
+    });
+});
+
 userPage.addEventListener('click', () => {
     isUserMenuOpen = !isUserMenuOpen;
     userMenu.classList.toggle('user-menu-visible');
@@ -78,7 +98,6 @@ userPage.addEventListener('click', () => {
         document.removeEventListener('click', closeUserMenu)
     }
 });
-
 function closeUserMenu(e) {
     if (isUserMenuOpen) {
         if (!userMenu.contains(e.target) && !userPage.contains(e.target)) {
@@ -88,7 +107,7 @@ function closeUserMenu(e) {
     }
 }
 
-//Clic sobre el botón hamburguesa
+
 botonMenu.addEventListener('click', () => {
     isAsideMenuOpen = !isAsideMenuOpen;
     menuAside.classList.toggle('menu-visible');
@@ -99,7 +118,6 @@ botonMenu.addEventListener('click', () => {
         document.removeEventListener('click', closeAsideMenu)
     }
 });
-
 function closeAsideMenu(e) {
     if (isAsideMenuOpen) {
         if (!menuAside.contains(e.target) && !botonMenu.contains(e.target) && window.innerWidth <= phoneResolution) {
@@ -110,7 +128,7 @@ function closeAsideMenu(e) {
     }
 }
 
-// Función genérica para manejar los clics y cambios entre scciones de las páginas
+
 function setupMenuButton(config) {
     config.button.addEventListener('click', () => {
         if (!config.button.classList.contains('button-active')) {
@@ -132,54 +150,10 @@ function setupMenuButton(config) {
         }
     });
 }
-
-// Inicializar todos los botones
 menuAsideSections.forEach(setupMenuButton);
-
-// Funciones auxiliares (se mantienen igual)
 function removeActiveSection() {
     displayContent.getElementsByClassName('section-active')[0]?.classList.remove('section-active')
 }
-
 function removeActiveButton() {
     menuButtons.getElementsByClassName('button-active')[0]?.classList.remove('button-active')
 }
-
-
-
-// Función para manejar el scroll
-const handleScroll = (sectionId, direction) => {
-    const section = document.getElementById(sectionId);
-    if (!section) return;
-
-    let scrollAmount;
-
-    switch (sectionId) {
-        case 'section-3':
-            scrollAmount = 349;
-            break;
-        default:
-            scrollAmount = 232;
-    }
-
-    section.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth'
-    });
-};
-
-// Asignar eventos a los botones de scroll izquierdo
-scrollLeftButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const sectionId = button.getAttribute('data-section');
-        handleScroll(sectionId, 'left');
-    });
-});
-
-// Asignar eventos a los botones de scroll derecho
-scrollRightButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const sectionId = button.getAttribute('data-section');
-        handleScroll(sectionId, 'right');
-    });
-});
