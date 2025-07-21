@@ -15,21 +15,18 @@ body {
 
 #user-menu {
     display: block;
+    max-height: 0;
     width: fit-content;
-    height: fit-content;
+    overflow: hidden;
     position: fixed;
     background-color: rgb(5, 0, 27);
-    border: 1px solid rgba(255, 255, 255, 0.13);
+    border: 1px solid rgba(255, 255, 255, 0.329);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
-    transition: visibility ease-in-out 0.2s, opacity ease-in-out 0.2s;
-    top: 73px;
+    transition: max-height 0.3s ease-in-out;
+    top: 72px;
     margin-right: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
     right: 0;
-    /*visibility: hidden;*/
-    /*opacity: 0;*/
     z-index: 1;
 
     span {
@@ -37,7 +34,7 @@ body {
     }
 
     svg {
-        position: fixed;
+        position: absolute;
         transition: stroke ease-in-out 0.2s;
     }
 
@@ -56,6 +53,8 @@ body {
     }
 
     >div.user-sections {
+        padding-top: 20px;
+        padding-bottom: 20px;
         display: flex;
         flex-direction: column;
         gap: 15px;
@@ -66,7 +65,7 @@ body {
             display: flex;
             flex-direction: column;
             gap: 15px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.329);
             padding-bottom: 15px;
 
             >div.name-pic {
@@ -88,12 +87,9 @@ body {
     }
 }
 
-.user-menu-visible {
-    visibility: visible;
-    opacity: 100%;
-    z-index: 1;
+#user-menu.user-menu-visible {
+    max-height: 100%;
 }
-
 /*---*/
 
 /*Barra Scroll Lateral*/
@@ -353,11 +349,26 @@ main {
                         align-items: center;
                         gap: 20px;
 
+                        > div.title-logo {
+                            display: flex;
+                            align-items: center;
+                            gap: 20px;
+                        }
+
+                        > div.title-logo:hover {
+                            cursor: pointer;
+
+                            > img {
+                                filter: brightness(0.7) contrast(1.2) saturate(0.8);
+                            }
+                        }
+
                         img {
                             width: 50px;
                             height: 50px;
                             border-radius: 100%;
                             aspect-ratio: 1/1;
+                            transition: filter ease-in-out 0.2s;
                         }
 
                         div.scroll-controls {

@@ -1,7 +1,7 @@
 // Body
 const bodyMain = document.getElementById('body-main');
 // Menu lateral
-const menuAside = document.querySelector('aside.menu');
+const menuAside = document.getElementById('menu-buttons');
 // Boton hamburguesa header
 const botonMenu = document.querySelector('.header-menu-button');
 // Seccion principal donde se muestra el contenido
@@ -24,6 +24,28 @@ const scrollLeftButtons = document.querySelectorAll('.scroll-left');
 const scrollRightButtons = document.querySelectorAll('.scroll-right');
 //Boton pagina usuario
 const userPage = document.getElementById('userLogo');
+const userMenu = document.getElementById('user-menu');
+let isUserMenuOpen = false;
+let isAsideMenuOpen;
+
+const menuButtons = document.getElementById('menu-buttons');
+
+// Configuración de mapeo entre botones y secciones
+const menuAsideSections = [
+    {
+        button: buttonHome,
+        section: sectionMenuHome,
+    },
+    {
+        button: buttonExplore,
+        section: sectionMenuExplore,
+    },
+    {
+        button: buttonLibrary,
+        section: sectionMenuLibrary,
+    }
+];
+
 
 //Animacion inicial
 logoGuimorMusic.classList.add('load-animation');
@@ -37,74 +59,87 @@ setTimeout(() => {
 
 // Disposicion inicial para dispositivos móviles-tablets
 if (window.innerWidth <= 1555) {
+    isAsideMenuOpen = false;
     menuAside.classList.remove('menu-visible');
     sectionBlocker.classList.remove('active-aside-menu');
+} else {
+    isAsideMenuOpen = true;
 }
 
 // Al clicar sobre el boton de "usuario"
 userPage.addEventListener('click', () => {
-    menuAside.classList.toggle('menu-visible');
+    isUserMenuOpen = !isUserMenuOpen;
+    userMenu.classList.toggle('user-menu-visible');
+
+    if (isUserMenuOpen) {
+        document.addEventListener('click', closeUserMenu)
+    } else {
+        document.removeEventListener('click', closeUserMenu)
+    }
 });
+
+function closeUserMenu(e) {
+    if (isUserMenuOpen) {
+        if (!userMenu.contains(e.target) && !userPage.contains(e.target)) {
+            isUserMenuOpen = false;
+            userMenu.classList.remove('user-menu-visible')
+        }
+    }
+}
 
 //Clic sobre el botón hamburguesa
 botonMenu.addEventListener('click', () => {
+    isAsideMenuOpen = !isAsideMenuOpen;
     menuAside.classList.toggle('menu-visible');
     sectionBlocker.classList.toggle('active-aside-menu');
-});
 
-// Clic sobre el botón "Home"
-buttonHome.addEventListener('click', () => {
-    removeActiveClass([sectionMenuExplore, sectionMenuLibrary]);
-    removeActiveButton([buttonExplore, buttonLibrary]);
-    sectionMenuHome.classList.add('section-active');
-    buttonHome.classList.add('button-active');
-    if (window.innerWidth <= 1555) {
-        sectionBlocker.classList.toggle('active-aside-menu');
-        menuAside.classList.toggle('menu-visible');
+     if (isAsideMenuOpen) {
+        document.addEventListener('click', closeAsideMenu)
+    } else {
+        document.removeEventListener('click', closeAsideMenu)
     }
 });
 
-// Clic sobre el botón "Explore"
-buttonExplore.addEventListener('click', () => {
-    removeActiveClass([sectionMenuHome, sectionMenuLibrary]);
-    removeActiveButton([buttonHome, buttonLibrary]);
-    sectionMenuExplore.classList.add('section-active');
-    buttonExplore.classList.add('button-active');
-    if (window.innerWidth <= 1555) {
-        sectionBlocker.classList.toggle('active-aside-menu');
-        menuAside.classList.toggle('menu-visible');
+function closeAsideMenu(e) {
+    if (menuAside.classList.contains('menu-visible')) {
+        if (!menuAside.contains(e.target) && !botonMenu.contains(e.target)) {
+            isAsideMenuOpen = false;
+            menuAside.classList.remove('menu-visible');
+            sectionBlocker.classList.remove('active-aside-menu');
+        }
     }
-});
+}
 
-// Clic sobre el botón "Library"
-buttonLibrary.addEventListener('click', () => {
-    removeActiveClass([sectionMenuHome, sectionMenuExplore]);
-    removeActiveButton([buttonHome, buttonExplore]);
-    sectionMenuLibrary.classList.add('section-active');
-    buttonLibrary.classList.add('button-active');
-    if (window.innerWidth <= 1555) {
-        sectionBlocker.classList.toggle('active-aside-menu');
-        menuAside.classList.toggle('menu-visible');
-    }
-});
+// Función genérica para manejar los clicks
+function setupMenuButton(config) {
+    config.button.addEventListener('click', () => {
+        if (!config.button.classList.contains('button-active')) {
+            removeActiveSection();
+            removeActiveButton();
+            config.section.classList.add('section-active');
+            config.button.classList.add('button-active');
+        }
 
-// Función para quitar la clase .section-active de una lista de elementos
-function removeActiveClass(elements) {
-    elements.forEach(element => {
-        if (element.classList.contains('section-active')) {
-            element.classList.remove('section-active');
+        if (window.innerWidth <= 1555) {
+            sectionBlocker.classList.toggle('active-aside-menu');
+            menuAside.classList.toggle('menu-visible');
         }
     });
 }
 
-// Función para quitar la clase .button-active de una lista de elementos
-function removeActiveButton(elements) {
-    elements.forEach(element => {
-        if (element.classList.contains('button-active')) {
-            element.classList.remove('button-active');
-        }
-    })
+// Inicializar todos los botones
+menuAsideSections.forEach(setupMenuButton);
+
+// Funciones auxiliares (se mantienen igual)
+function removeActiveSection() {
+    displayContent.getElementsByClassName('section-active')[0]?.classList.remove('section-active')
 }
+
+function removeActiveButton() {
+    menuButtons.getElementsByClassName('button-active')[0]?.classList.remove('button-active')
+}
+
+
 
 // Función para manejar el scroll
 const handleScroll = (sectionId, direction) => {
