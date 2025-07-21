@@ -27,6 +27,7 @@ const userPage = document.getElementById('userLogo');
 const userMenu = document.getElementById('user-menu');
 let isUserMenuOpen = false;
 let isAsideMenuOpen;
+const phoneResolution = 1555;
 
 const menuButtons = document.getElementById('menu-buttons');
 
@@ -58,7 +59,7 @@ setTimeout(() => {
 //
 
 // Disposicion inicial para dispositivos móviles-tablets
-if (window.innerWidth <= 1555) {
+if (window.innerWidth <= phoneResolution) {
     isAsideMenuOpen = false;
     menuAside.classList.remove('menu-visible');
     sectionBlocker.classList.remove('active-aside-menu');
@@ -92,8 +93,7 @@ botonMenu.addEventListener('click', () => {
     isAsideMenuOpen = !isAsideMenuOpen;
     menuAside.classList.toggle('menu-visible');
     sectionBlocker.classList.toggle('active-aside-menu');
-
-     if (isAsideMenuOpen) {
+    if (isAsideMenuOpen) {
         document.addEventListener('click', closeAsideMenu)
     } else {
         document.removeEventListener('click', closeAsideMenu)
@@ -101,8 +101,8 @@ botonMenu.addEventListener('click', () => {
 });
 
 function closeAsideMenu(e) {
-    if (menuAside.classList.contains('menu-visible')) {
-        if (!menuAside.contains(e.target) && !botonMenu.contains(e.target)) {
+    if (isAsideMenuOpen) {
+        if (!menuAside.contains(e.target) && !botonMenu.contains(e.target) && window.innerWidth <= phoneResolution) {
             isAsideMenuOpen = false;
             menuAside.classList.remove('menu-visible');
             sectionBlocker.classList.remove('active-aside-menu');
@@ -110,7 +110,7 @@ function closeAsideMenu(e) {
     }
 }
 
-// Función genérica para manejar los clicks
+// Función genérica para manejar los clics y cambios entre scciones de las páginas
 function setupMenuButton(config) {
     config.button.addEventListener('click', () => {
         if (!config.button.classList.contains('button-active')) {
@@ -120,9 +120,15 @@ function setupMenuButton(config) {
             config.button.classList.add('button-active');
         }
 
-        if (window.innerWidth <= 1555) {
+        if (window.innerWidth <= phoneResolution) {
+            isAsideMenuOpen = !isAsideMenuOpen;
             sectionBlocker.classList.toggle('active-aside-menu');
             menuAside.classList.toggle('menu-visible');
+            if (isAsideMenuOpen) {
+                document.addEventListener('click', closeAsideMenu)
+            } else {
+                document.removeEventListener('click', closeAsideMenu)
+            }
         }
     });
 }
