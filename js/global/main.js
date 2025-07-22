@@ -1,4 +1,3 @@
-const bodyMain = document.getElementById('body-main');
 const menuAside = document.getElementById('menu-buttons');
 const botonMenu = document.querySelector('.header-menu-button');
 const displayContent = document.getElementById('display-content');
