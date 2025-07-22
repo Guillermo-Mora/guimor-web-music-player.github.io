@@ -1,20 +1,20 @@
 @media (max-width: 430px) {
-   
-        footer {
-            gap: 20px;
 
-            div.song-card {
-                margin-right: auto;
+    footer {
+        gap: 20px;
 
-                div {
-                    small {
-                        max-width: 100px;
-                    }
+        div.song-card {
+            margin-right: auto;
+
+            div {
+                small {
+                    max-width: 100px;
                 }
             }
-
         }
-    
+
+    }
+
 }
 
 @media (max-width: 450px) {
@@ -170,6 +170,23 @@
     }
 
     aside.menu {
-                background-color: rgb(5, 0, 27);
+        background-color: rgb(5, 0, 27);
+    }
+}
+
+@media (max-width: 1391px) {
+
+    main:has(.section-active.home, .section-active.explore) {
+        justify-content: left;
+
+        section.home,
+        section.explore {
+            max-width: none;
+            margin-left: 15px;
+
+            div.scroll-controls {
+                margin-right: 15px;
             }
+        }
+    }
 }
