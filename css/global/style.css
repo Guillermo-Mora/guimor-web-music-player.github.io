@@ -581,50 +581,37 @@ main {
     section.explore {}
 
     section.library {
+        width: 100dvw;
+
         article.playlists {
             margin-bottom: 90px;
 
             div.playlists-section {
-                display: flex;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(140px, max-content));
+                gap: 20px;
                 justify-content: center;
-                flex-wrap: wrap;
-                gap: 30px;
+                padding: 0 15px;
 
                 div.playlist-card {
                     display: flex;
                     flex-direction: column;
-                    width: 150px;
+                    width: 140px;
                     height: auto;
                     flex-shrink: 0;
-                    gap: 20px;
+                    gap: 10px;
 
                     >div.image-card:hover {
                         cursor: pointer;
-
-                        >img {
-                            opacity: 1;
-                            background-color: #0000006e;
-                        }
+                        filter: brightness(0.7) contrast(1.2) saturate(0.8);
                     }
 
                     >div.image-card {
                         border-radius: 20px;
                         background-size: cover;
-                        width: 150px;
-                        height: 150px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-
-                        >img {
-                            opacity: 0;
-                            width: 150px;
-                            height: 150px;
-                            aspect-ratio: 1/1;
-                            border-radius: 20px;
-                            padding: 70px;
-                            transition: background-color ease-in-out 0.2s, opacity, ease-in-out 0.2s;
-                        }
+                        width: 140px;
+                        height: 140px;
+                        transition: filter ease-in-out 0.2s;
                     }
 
                     >div.playlist-info {
